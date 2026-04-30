@@ -1,6 +1,6 @@
 import { computed, Injectable, signal } from '@angular/core';
 import { Film } from '../interfaces/film.interface';
-import { APP_CONFIG } from '../config/app.config';
+import { APP_CONFIG } from '../config/api.config';
 
 @Injectable({ providedIn: 'root' })
 export class FilmService {
