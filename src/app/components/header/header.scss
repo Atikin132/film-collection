@@ -1,0 +1,54 @@
+.header {
+  background: rgb(06, 13, 20);
+  color: #fff;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-container {
+  color: white;
+  text-decoration: none;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: fit-content;
+}
+
+.logo-img {
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: contain;
+  background-color: transparent;
+  background-image: url('../../../assets/logo.svg');
+}
+
+.logo-text {
+  font-size: 24px;
+  margin: 0px;
+}
+
+.nav {
+  display: flex;
+  gap: 16px;
+}
+
+.nav .link {
+  color: white;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.nav .link:hover {
+  color: rgb(80, 97, 188);
+}
+
+.nav .link.active {
+  color: rgb(80, 97, 188);
+  border-bottom: 2px solid rgb(80, 97, 188);
+}

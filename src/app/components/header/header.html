@@ -1,1 +1,19 @@
-<p>header works!</p>
+<header class="header">
+  <a class="logo-container" routerLink="/">
+    <div class="logo-img"></div>
+    <h1 class="logo-text">Film Collection</h1>
+  </a>
+
+  <nav class="nav">
+    <a
+      class="link"
+      routerLink="/home"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      Home
+    </a>
+
+    <a class="link" routerLink="/about" routerLinkActive="active"> About </a>
+  </nav>
+</header>
