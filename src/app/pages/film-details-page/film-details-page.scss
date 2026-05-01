@@ -1,0 +1,67 @@
+:host {
+  display: flex;
+  flex: 1;
+}
+
+.film-details-page {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(30, 35, 40);
+  flex: 1;
+  padding: 30px;
+  gap: 30px;
+  color: white;
+}
+
+.info-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.film-poster {
+  border-radius: 20px;
+  border: 1px solid rgb(60, 70, 80);
+}
+
+.details-container {
+  flex: 1 1 320px;
+  min-width: 320px;
+}
+
+.film-title {
+  font-size: 2.2rem;
+  margin: 0;
+}
+
+.film-meta {
+  color: #aaa;
+}
+
+.film-description {
+  color: #aaa;
+}
+
+.back-btn {
+  width: fit-content;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: rgb(65, 75, 200);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.back-btn:hover {
+  opacity: 95%;
+  transform: translateY(-4px);
+}
+
+.film-details-page:has(.film-not-found-text) {
+  justify-content: center;
+  align-items: center;
+}
+
+.film-not-found-text {
+  font-size: 1.5rem;
+}

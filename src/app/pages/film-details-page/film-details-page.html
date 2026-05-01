@@ -1,1 +1,20 @@
-<p>film-details-page works!</p>
+<div class="film-details-page">
+  @if (isLoading()) {
+    <p>Loading...</p>
+  } @else if (film(); as film) {
+    <div class="info-container">
+      <img class="film-poster" [src]="film.posterUrl" [alt]="film.title" />
+      <div class="details-container">
+        <h2 class="film-title">{{ film.title }}</h2>
+        <p class="film-meta">
+          {{ film.year }}&nbsp;&nbsp;•&nbsp;&nbsp;{{ film.genre }}&nbsp;&nbsp;•&nbsp;&nbsp;⭐
+          {{ film.rating }}&nbsp;&nbsp;•&nbsp;&nbsp;⏳ {{ film.duration }}
+        </p>
+        <p class="film-description">{{ film.description }}</p>
+      </div>
+    </div>
+    <button class="back-btn" routerLink="/home">←&nbsp;&nbsp;Back to Home</button>
+  } @else {
+    <p class="film-not-found-text">Film not found</p>
+  }
+</div>
