@@ -8,6 +8,10 @@ export class FilmService {
   loading = signal(false);
   error = signal<string | null>(null);
 
+  constructor() {
+    this.loadFilms();
+  }
+
   private get url(): string {
     return APP_CONFIG.useMock ? APP_CONFIG.mockUrl : APP_CONFIG.apiUrl;
   }

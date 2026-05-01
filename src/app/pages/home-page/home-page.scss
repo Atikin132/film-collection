@@ -1,0 +1,26 @@
+:host {
+  display: flex;
+  flex: 1;
+}
+
+.home-page {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(30, 35, 40);
+  gap: 20px;
+  flex: 1;
+  justify-content: center;
+}
+
+.grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 20px;
+}
+
+.nothing-found-text {
+  color: white;
+  align-self: center;
+}

@@ -1,1 +1,11 @@
-<p>home-page works!</p>
+<div class="home-page">
+  @if (films().length > 0) {
+    <div class="grid">
+      @for (film of films(); track film.id) {
+        <app-film-card [film]="film" />
+      }
+    </div>
+  } @else {
+    <p class="nothing-found-text">Nothing found</p>
+  }
+</div>
