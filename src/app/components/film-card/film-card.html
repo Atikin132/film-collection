@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" [routerLink]="['/film', film().id]">
   <img class="poster" [src]="film().posterUrl" [alt]="film().title" />
 
   <div class="info">
@@ -8,5 +8,9 @@
 
     <p class="rating">⭐ {{ film().rating }}</p>
   </div>
-  <button class="favorite-btn"></button>
+  <button
+    class="favorite-btn"
+    [class.active]="film().isFavorite"
+    (click)="toggleFavorite($event)"
+  ></button>
 </div>
