@@ -1,0 +1,29 @@
+:host {
+  display: flex;
+  flex: 1;
+}
+
+.about-page {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(30, 35, 40);
+  flex: 1;
+  padding: 30px;
+  color: white;
+  align-items: center;
+  gap: 30px;
+}
+
+.text {
+  margin: 0;
+}
+
+.github-repository-link {
+  color: rgb(80, 97, 188);
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.github-repository-link:hover {
+  border-bottom: 2px solid rgb(80, 97, 188);
+}
