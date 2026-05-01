@@ -8,7 +8,7 @@
         <h2 class="film-title">{{ film.title }}</h2>
         <p class="film-meta">
           {{ film.year }}&nbsp;&nbsp;•&nbsp;&nbsp;{{ film.genre }}&nbsp;&nbsp;•&nbsp;&nbsp;⭐
-          {{ film.rating }}&nbsp;&nbsp;•&nbsp;&nbsp;⏳ {{ film.duration }}
+          {{ film.rating }}&nbsp;&nbsp;•&nbsp;&nbsp;⏳ {{ film.duration | duration }}
         </p>
         <p class="film-description">{{ film.description }}</p>
       </div>
