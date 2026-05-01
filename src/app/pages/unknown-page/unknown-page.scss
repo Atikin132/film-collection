@@ -1,0 +1,35 @@
+:host {
+  display: flex;
+  flex: 1;
+}
+
+.unknown-page {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(30, 35, 40);
+  flex: 1;
+  padding: 30px;
+  color: white;
+  align-items: center;
+  gap: 30px;
+}
+
+.error-image {
+  width: 100%;
+  max-width: 40rem;
+}
+
+.back-btn {
+  width: fit-content;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: rgb(65, 75, 200);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.back-btn:hover {
+  opacity: 95%;
+  transform: translateY(-4px);
+}
