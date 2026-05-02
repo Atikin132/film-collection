@@ -1,7 +1,8 @@
+<app-search [value]="search()" (valueChange)="onSearchChange($event)" />
 <div class="home-page">
-  @if (films().length > 0) {
+  @if (filteredFilms().length > 0) {
     <div class="grid">
-      @for (film of films(); track film.id) {
+      @for (film of filteredFilms(); track film.id) {
         <app-film-card [film]="film" />
       }
     </div>

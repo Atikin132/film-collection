@@ -1,0 +1,25 @@
+.search-container {
+  padding: 20px;
+  background-color: rgb(30, 35, 40);
+  display: flex;
+  justify-content: center;
+}
+
+.search {
+  width: 100%;
+  color: white;
+  padding: 10px 12px 10px 40px;
+  border-radius: 10px;
+  border-color: rgb(65, 75, 200);
+  background-color: rgb(30, 35, 40);
+  max-width: 1015px;
+
+  background-image: url('../../../assets/search.svg');
+  background-repeat: no-repeat;
+  background-position: 12px center;
+  background-size: 18px;
+
+  &::placeholder {
+    color: #aaa;
+  }
+}
