@@ -1,8 +1,9 @@
 import { Component, input, output } from '@angular/core';
+import { AutofocusDirective } from '../../shared/directives/autofocus-directive/autofocus-directive';
 
 @Component({
   selector: 'app-search',
-  imports: [],
+  imports: [AutofocusDirective],
   templateUrl: './search.html',
   styleUrl: './search.scss',
 })
