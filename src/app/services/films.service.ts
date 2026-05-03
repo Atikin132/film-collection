@@ -1,6 +1,8 @@
 import { computed, Injectable, signal } from '@angular/core';
 import { Film } from '../interfaces/film.interface';
 import { APP_CONFIG } from '../config/api.config';
+import { isFilmArray } from '../guards/film.guards';
+import { isNumberArray } from '../utils/is-type-array';
 
 @Injectable({ providedIn: 'root' })
 export class FilmService {
@@ -29,7 +31,11 @@ export class FilmService {
         throw new Error('Failed to load movies');
       }
 
-      const data: Film[] = await res.json();
+      const data: unknown = await res.json();
+
+      if (!isFilmArray(data)) {
+        return;
+      }
 
       const favorites = this.getStoredFavorites();
 
@@ -70,7 +76,15 @@ export class FilmService {
 
   private getStoredFavorites(): number[] {
     const data = localStorage.getItem(this.FAVORITE_FILMS_KEY);
-    return data ? JSON.parse(data) : [];
+    if (!data) {
+      return [];
+    }
+    const parsed: unknown = JSON.parse(data);
+
+    if (isNumberArray(parsed)) {
+      return parsed;
+    }
+    return [];
   }
 
   private saveFavorites(ids: number[]) {
