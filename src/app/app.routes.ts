@@ -15,7 +15,7 @@ export const routes: Routes = [
     component: HomePage,
   },
   {
-    path: 'film/:id',
+    path: 'home/film/:id',
     component: FilmDetailsPage,
   },
   {

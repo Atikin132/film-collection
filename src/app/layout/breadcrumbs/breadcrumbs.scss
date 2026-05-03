@@ -1,0 +1,28 @@
+.breadcrumbs-container {
+  background-color: rgb(30, 35, 40);
+  color: #aaa;
+  display: flex;
+  justify-content: center;
+  padding: 20px 20px 0px;
+}
+
+.breadcrumbs {
+  width: 100%;
+  max-width: 1000px;
+  padding: 0px 12px 0px 40px;
+
+  background-image: url('../../../assets/home.svg');
+  background-repeat: no-repeat;
+  background-position: 12px center;
+  background-size: 18px;
+}
+
+.link {
+  color: white;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.link:hover {
+  color: rgb(80, 97, 188);
+}
