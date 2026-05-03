@@ -4,6 +4,8 @@ import { APP_CONFIG } from '../config/api.config';
 
 @Injectable({ providedIn: 'root' })
 export class FilmService {
+  private readonly FAVORITE_FILMS_KEY = 'favorite_films';
+
   films = signal<Film[]>([]);
   loading = signal(false);
   error = signal<string | null>(null);
@@ -29,7 +31,14 @@ export class FilmService {
 
       const data: Film[] = await res.json();
 
-      this.films.set(data);
+      const favorites = this.getStoredFavorites();
+
+      const filmsWithFavorites = data.map((film) => ({
+        ...film,
+        isFavorite: favorites.includes(film.id),
+      }));
+
+      this.films.set(filmsWithFavorites);
     } catch (error: unknown) {
       if (error instanceof Error) {
         this.error.set(error.message);
@@ -44,10 +53,27 @@ export class FilmService {
   }
 
   toggleFavorite(id: number) {
-    this.films.update((films) =>
-      films.map((film) => (film.id === id ? { ...film, isFavorite: !film.isFavorite } : film)),
-    );
+    this.films.update((films) => {
+      const updated = films.map((film) =>
+        film.id === id ? { ...film, isFavorite: !film.isFavorite } : film,
+      );
+
+      const favoriteIds = updated.filter((f) => f.isFavorite).map((f) => f.id);
+
+      this.saveFavorites(favoriteIds);
+
+      return updated;
+    });
   }
 
   favorites = computed(() => this.films().filter((film) => film.isFavorite));
+
+  private getStoredFavorites(): number[] {
+    const data = localStorage.getItem(this.FAVORITE_FILMS_KEY);
+    return data ? JSON.parse(data) : [];
+  }
+
+  private saveFavorites(ids: number[]) {
+    localStorage.setItem(this.FAVORITE_FILMS_KEY, JSON.stringify(ids));
+  }
 }
